@@ -2,15 +2,15 @@ import React, { Component } from 'react'
 import { View, StyleSheet } from 'react-native'
 import Header from './Header'
 import Footer from './Footer'
-
-const screens = ['about', 'music', 'cv', 'contact']
+import About from './About'
+import { screens } from '../data/NavigationData'
 
 class Navigator extends Component {
 	render () {
 		return (
 			<View style={styles.container}>
 	      <Header />
-	      <View style={styles.content} />
+	      <About />
 	      <Footer screens={screens} test={'test'}/>
 		  </View>
 		)
