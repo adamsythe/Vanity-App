@@ -1,12 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  StyleSheet, Text, View, TouchableOpacity
+} from 'react-native';
 
-export default function Tab(props) {
-  const title = props.title
+export default function Tab(
+    { title, changeScreen, isSelected, index }
+  ) {
   return (
-     <View style={styles.container}>
-      <Text>{title}</Text>
-     </View>
+     <TouchableOpacity
+      style={styles.container}
+      onPress={() => changeScreen(index)}
+     >
+       <View>
+        <Text style={
+          isSelected
+            ? styles.selectedText : styles.unselectedText
+        }>{title}</Text>
+       </View>
+     </TouchableOpacity>
   );
 }
 
@@ -15,5 +26,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
+  },
+  selectedText: {
+    color: 'blue',
+  },
+  unselectedText: {
+    color: 'black',
   },
 });

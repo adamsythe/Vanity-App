@@ -6,12 +6,28 @@ import About from './About'
 import { screens } from '../data/NavigationData'
 
 class Navigator extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+      		screenIndex: 0,
+    	}
+    	this.changeScreen = this.changeScreen.bind(this)
+	}
+	changeScreen(index) {
+		this.setState({
+			screenIndex: index,
+		})
+	}
 	render () {
 		return (
 			<View style={styles.container}>
 	      <Header />
 	      <About />
-	      <Footer screens={screens} test={'test'}/>
+	      <Footer
+	      	screens={screens}
+	      	changeScreen={this.changeScreen}
+	      	screenIndex={this.state.screenIndex}
+	      />
 		  </View>
 		)
 	}

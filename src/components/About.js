@@ -7,7 +7,7 @@ export default function About() {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>{title}</Text>
-      <Avatar size={50} />
+      <Avatar size={150} />
       <Text style={styles.description}>{description}</Text>
     </View>
   );
@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     padding: 16,
+    backgroundColor: '#fff',
   },
   header: {
     marginTop: 24,
