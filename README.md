@@ -2,17 +2,22 @@
 
 Home Work
 
-1.
-Make the About component white.
-Make the Footer and Header component white.
-Give the Footer a borderTop.
-Give the Header a borderBottom.
-Look at the docs and check out shadowProps, they go inside styles. Both the footer and header should have a shadow
+1.  Wrap the avatar in the Header in a TouchableOpacity, if it is clicked it should change the screen to Profile (ie make the profile tab go blue)
 
-2.  On the About component make the Avatar bigger.
-	Add some margin to the description text to make it look a little nicer.
-	Add a smaller avatar to the Header, dont stress about where on the Header it sits but it must be smaller than the About one
+2.  Create a class component called Music.js.  It should be flex 1 and white.  Import it into Navigator.js and in the JSX replace the About component with the Music component.
 
-3. Read up about the react-native component TouchableOpacity. Please wrap the tabs in this component as well as the avatar in the header.  Leave out the onPress prop for now. 
+3.  Open the github page and copy the file './src/data/musicData' into your project
 
-4.  (this one is difficult). Add the onPress prop to your Touchable Opacities, when they get pressed i want to see 'I was pressed!' in the console.
+4.  Import musicData into the Music component and console.log it to see if it is imported properly
+
+5.  Change the console.log to log the first item in the musicData array instead of the entire array
+
+6.  Create a new functional component called Song.js and import it into Music.js
+
+7.  Song should take 2 props title and artist and it should display them in a bordered box.
+
+8. Music should send title and artist of the FIRST song in the array to the Song component.  
+
+9. Wrap song in a Touchable Opacity and when its clicked it should say 'I was clicked!'
+
+10.  Bonus!  When Song is pressed it should open the youtube link
