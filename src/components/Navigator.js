@@ -3,6 +3,7 @@ import { View, StyleSheet } from 'react-native'
 import Header from './Header'
 import Footer from './Footer'
 import About from './About'
+import Music from './Music'
 import { screens } from '../data/NavigationData'
 
 class Navigator extends Component {
@@ -21,8 +22,8 @@ class Navigator extends Component {
 	render () {
 		return (
 			<View style={styles.container}>
-	      <Header />
-	      <About />
+	      <Header goToProfile={() => this.changeScreen(0)}/>
+	      <Music />
 	      <Footer
 	      	screens={screens}
 	      	changeScreen={this.changeScreen}

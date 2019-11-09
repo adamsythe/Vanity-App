@@ -2,22 +2,11 @@
 
 Home Work
 
-1.  Wrap the avatar in the Header in a TouchableOpacity, if it is clicked it should change the screen to Profile (ie make the profile tab go blue)
+1.  Try get your Song component looking really good
 
-2.  Create a class component called Music.js.  It should be flex 1 and white.  Import it into Navigator.js and in the JSX replace the About component with the Music component.
+2.  Read up about the react-native component flatlist and try incorprate it to create a list of all the songs
 
-3.  Open the github page and copy the file './src/data/musicData' into your project
+3. Read up about the react native component TextInput and put it on the Music component above the list of songs
 
-4.  Import musicData into the Music component and console.log it to see if it is imported properly
+4.  Bonus!  Have a look at how if statements and using triple equals try and see if you can get the screen to switch when you click the tabs.  When its on Profile it should show the About screen, when its on Music it should show the music screen and if its neither of those it should have a view with flex 1.  This is very challenging so gl!
 
-5.  Change the console.log to log the first item in the musicData array instead of the entire array
-
-6.  Create a new functional component called Song.js and import it into Music.js
-
-7.  Song should take 2 props title and artist and it should display them in a bordered box.
-
-8. Music should send title and artist of the FIRST song in the array to the Song component.  
-
-9. Wrap song in a Touchable Opacity and when its clicked it should say 'I was clicked!'
-
-10.  Bonus!  When Song is pressed it should open the youtube link
