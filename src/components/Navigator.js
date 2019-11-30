@@ -19,11 +19,24 @@ class Navigator extends Component {
 			screenIndex: index,
 		})
 	}
+	chooseScreen() {
+		const { screenIndex } = this.state
+		if (screenIndex === 0) {
+			return <About />
+		}
+		if (screenIndex === 1) {
+			return <Music />
+		}
+		return <View style={styles.container}/>
+	}
+
 	render () {
 		return (
 			<View style={styles.container}>
 	      <Header goToProfile={() => this.changeScreen(0)}/>
-	      <Music />
+	      {
+	      	this.chooseScreen()
+	      }
 	      <Footer
 	      	screens={screens}
 	      	changeScreen={this.changeScreen}
