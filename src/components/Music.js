@@ -3,6 +3,7 @@ import { View, StyleSheet, FlatList, TextInput } from 'react-native';
 import { music } from '../data/musicData'
 import Song from './Song'
 
+let songList = music
 
 class Music extends Component {
 	constructor(props) {
@@ -14,16 +15,24 @@ class Music extends Component {
   }
 
   setFilterText(text) {
+    const textWithoutLastLetter = text.substring(0, text.length - 1)
+    if (textWithoutLastLetter !== this.state.filterText) {
+      songList = music
+    }
   	this.setState({
   		filterText: text.toLowerCase(),
   	})
   }
 
    filterMusic() {
+    console.log(songList)
   	const { filterText } = this.state
+    if (filterText === '') {
+      return songList
+    }
   	const filteredMusic = []
-  	for (var i = 0; i < music.length; i++) {
-  		const song = music[i]
+  	for (var i = 0; i < songList.length; i++) {
+  		const song = songList[i]
   		const lowerSongTitle = song.title.toLowerCase()
   		const lowerSongArtist = song.artist.toLowerCase()
   		if(lowerSongTitle.includes(filterText)
@@ -37,7 +46,7 @@ class Music extends Component {
   }
 
 	render () {
-		const filteredMusic = this.filterMusic()
+		songList = this.filterMusic()
 		return (
 				<View style={styles.container}>
 					<TextInput
@@ -46,7 +55,7 @@ class Music extends Component {
             style={styles.textInput}
           />					
           <FlatList
-						data={filteredMusic}
+						data={songList}
 						renderItem={({ item, index }) => (
               <Song
                 title={item.title}
@@ -55,7 +64,7 @@ class Music extends Component {
               />
             )}
             keyExtractor={item => item.title}
-            extraData={filteredMusic}
+            extraData={songList}
 					/>
 				</View>
 			)
