@@ -2,6 +2,8 @@
 
 Home Work
 
+new things!!!
+
 1.  Try get your Song component looking really good
 
 2.  Read up about the react-native component flatlist and try incorprate it to create a list of all the songs
